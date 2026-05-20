@@ -1371,19 +1371,29 @@ footer.footer{
 	}
 	
 	.banner-slide .banner-slide-overlay{
-		left: 10%;
-		right: 10%;
+		left: 8%;
+		right: 8%;
+		top: auto;
+		bottom: 14%;
+		transform: none;
 	}
 	
 	.banner-slide-overlay h2{
-		font-size: 36px;
+		font-size: 28px;
+		line-height: 1.15;
+		margin-bottom: 0.75em;
 	}
 
 	.banner-slider .swiper-container.banner-slider,
 	.banner-slider .swiper-container.banner-slider .swiper-wrapper,
 	.banner-slider .swiper-container.banner-slider .swiper-slide{
-		height: min(72vh, 640px);
-		min-height: 420px;
+		height: min(68vh, 560px);
+		min-height: 380px;
+	}
+
+	.btn-slider{
+		padding: 8px 18px;
+		font-size: 13px;
 	}
 	
 	.activities-single{
@@ -1505,6 +1515,23 @@ footer.footer{
 }
 
 @media only screen and (max-width: 575px){
+	.banner-slide .banner-slide-overlay{
+		left: 6%;
+		right: 6%;
+		bottom: 12%;
+	}
+
+	.banner-slide-overlay h2{
+		font-size: 22px;
+	}
+
+	.banner-slider .swiper-container.banner-slider,
+	.banner-slider .swiper-container.banner-slider .swiper-wrapper,
+	.banner-slider .swiper-container.banner-slider .swiper-slide{
+		height: 60vh;
+		min-height: 320px;
+	}
+
 	
 	.header .container{
 		width: 100%;
