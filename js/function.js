@@ -9,9 +9,6 @@
 	   $(".preloader").fadeOut(600);
     });
 	
-	/* slick nav */
-	$('#main-menu').slicknav({prependTo:'#responsive-menu',label:'', closeOnClick:true});
-	
 	/* Stickey Header */
 	window.onscroll = function() {myFunction()};
 	var navbar = document.getElementById("main-navbar");
@@ -25,7 +22,7 @@
 	}
 	
 	/* Top Menu */
-	$(document).on('click','.navbar-nav li a, #responsive-menu ul li a',function(){
+	$(document).on('click','.navbar-nav li a',function(){
 		if($(this).hasClass("has-popup")) return false;
 		var id = $(this).attr('href');
 		if($(id).length) {
@@ -105,26 +102,28 @@
     new WOW({mobile:false}).init(); 
 	
 	/* Animated Header Slider Start */
-	var swiperAnimation = new SwiperAnimation();
-	var mySwiper = new Swiper('.swiper-container.banner-slider', {
-		effect: 'fade',
-		speed: 2000,
-		autoplay: {
-			delay: 6000
-		},
-		navigation: {
-			nextEl: '.banner-button-next',
-			prevEl: '.banner-button-prev',
-		},
-		on: {
-			init: function() {
-				swiperAnimation.init(this).animate();
+	if ($('.swiper-container.banner-slider').length) {
+		var swiperAnimation = new SwiperAnimation();
+		var mySwiper = new Swiper('.swiper-container.banner-slider', {
+			effect: 'fade',
+			speed: 2000,
+			autoplay: {
+				delay: 6000
 			},
-			slideChange: function() {
-				swiperAnimation.init(this).animate();
+			navigation: {
+				nextEl: '.banner-button-next',
+				prevEl: '.banner-button-prev',
+			},
+			on: {
+				init: function() {
+					swiperAnimation.init(this).animate();
+				},
+				slideChange: function() {
+					swiperAnimation.init(this).animate();
+				}
 			}
-		}
-	});
-	console.log(mySwiper);
+		});
+		console.log(mySwiper);
+	}
 	
 })(jQuery);
